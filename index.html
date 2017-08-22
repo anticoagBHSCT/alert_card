@@ -77,8 +77,13 @@
 </body>
 <script>
 $("#photo_button").click(function(){
-  alert(document.getElementById('file').value);
-document.getElementById('photo').src = document.getElementById('file').value;
+  var input = document.getElementById("file");
+  var fReader = new FileReader();
+  fReader.readAsDataURL(input.files[0]);
+  fReader.onloadend = function(event){
+  var img = document.getElementById("photo");
+  img.src = event.target.result;
+  }
 });
 $("#photo_remove_button").click(function(){
 document.getElementById('photo').src = "";
