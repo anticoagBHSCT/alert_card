@@ -1,0 +1,37 @@
+#front {
+  position: relative;
+  left: 50px;
+  width: 1050px;
+  height: 600px;
+  background-image: url(war_front.png);
+  background-position: center;
+  margin: 5px;
+}
+
+.label {
+  position: absolute;
+  color: rgb(28, 17, 7);
+  font-family: sans-serif;
+  font-size: 2em;
+  margin-left: 70px;
+}
+
+#barcode {
+  position: absolute;
+  margin-left: 720px;
+  margin-top: 470px;
+}
+
+#photo {
+  position: absolute;
+  margin-left: 720px;
+  margin-top: 205px;
+}
+
+#form {
+  position: relative;
+  left: 50px;
+  width: 1050px;
+  height: 600px;
+  margin: 5px;
+}
