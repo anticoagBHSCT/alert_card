@@ -1,136 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Anticoagulant alert card</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.3.1/screenfull.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/barcodes/JsBarcode.code128.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-  <div>
-      <div id="front">
-        <text class="label" id="name" style="margin-top: 235px;"></text>
-        <text class="label" id="address1" style="margin-top: 305px;"></text>
-        <text class="label" id="address2" style="margin-top: 325px;"></text>
-        <text class="label" id="address3" style="margin-top: 345px;"></text>
-        <text class="label" id="address4" style="margin-top: 365px;"></text>
-        <text class="label" id="address5" style="margin-top: 385px;"></text>
-        <text class="label" id="nok" style="margin-top: 450px;"></text>
-        <text class="label" id="tel" style="margin-top: 520px;"></text>
-        <svg id="barcode"></svg>
-        <img id="photo" src="" alt="photo">
-      </div>
-      <br>
-<div id="form">
-      <div  class="col-md-6">
-          <div class="form-group">
-            <label for="file">Picture upload:</label>
-            <input tabindex="1" type="file" class="form-control" id="file" accept="image/*">
-          </div>
-        <button id="photo_button" class="btn btn-default">Upload</button>
-        <button id="photo_remove_button" class="btn btn-default">Remove</button>
-        <br><br>
-        <div class="form-group">
-          <label for="num">H&amp;C number</label>
-          <input tabindex="2" type="number" class="form-control" id="num" maxlength=10>
-        </div>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input tabindex="3" type="text" class="form-control" id="namei">
-      </div>
+<ul class="pagination" id="ul">
+  <li><a href="#" class="active" id="front_link">Front</a></li>
+  <li><a href="#" id="back_link">Back</a></li>
+</ul>
+<div id="first">
+  <div class="col-md-12" id="front">
+    <text class="label" id="name" style="margin-top: 235px;"></text>
+    <text id="dob"></text>
+    <text class="label" id="address1" style="margin-top: 305px;"></text>
+    <text class="label" id="address2" style="margin-top: 325px;"></text>
+    <text class="label" id="address3" style="margin-top: 345px;"></text>
+    <text class="label" id="address4" style="margin-top: 365px;"></text>
+    <text class="label" id="address5" style="margin-top: 385px;"></text>
+    <text class="label" id="nok" style="margin-top: 450px;"></text>
+    <text class="label" id="tel" style="margin-top: 520px;"></text>
+    <svg id="barcode"></svg>
+    <img id="photo" src="" alt="photo">
+  </div>
+  <br>
+  <div id="form">
+    <div class="col-md-6">
+      <label for="file">Photo</label>
+      <input tabindex="1" type="file" id="file" accept="image/*">
+      <button id="photo_button">Upload</button>
+      <button id="photo_remove_button">Remove</button>
+      <br><br>
+      <label for="num">H&amp;C  </label>
+      <input tabindex="2" type="text" maxlength="10" id="num"><br>
+      <label for="dobi">DOB  </label>
+      <input tabindex="3" type="date" id="dobi"><br>
+      <label for="namei">Name</label>
+      <input tabindex="4" type="text" id="namei"><br>
       <br>
       <button id="clear" class="btn btn-info">Clear</button>
-      </div>
+    </div>
 
     <div class="col-md-6">
-      <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text" class="form-control" id="address1i" tabindex="4">
-        <input type="text" class="form-control" id="address2i" tabindex="5">
-        <input type="text" class="form-control" id="address3i" tabindex="6">
-        <input type="text" class="form-control" id="address4i" tabindex="7">
-        <input type="text" class="form-control" id="address5i" tabindex="8">
-      </div>
-      <div class="form-group">
-        <label for="name">Next of Kin</label>
-        <input type="text" class="form-control" id="noki" tabindex="9">
-      </div>
-      <div class="form-group">
-        <label for="name">Telephone</label>
-        <input type="text" class="form-control" id="teli" tabindex="10">
-      </div>
+      <label>Address</label><br>
+      <input type="text" id="address1i" tabindex="5"><br>
+      <input type="text" id="address2i" tabindex="6"><br>
+      <input type="text" id="address3i" tabindex="7"><br>
+      <input type="text" id="address4i" tabindex="8"><br>
+      <input type="text" id="address5i" tabindex="9"><br>
+
+      <label for="name">Next of Kin</label>
+      <input type="text" id="noki" tabindex="10"><br>
+
+      <label for="name">Telephone</label>
+      <input type="text" id="teli" tabindex="11">
 
     </div>
-    </div>
+  </div>
+</div>
+
+<div id="second">
+  <div id="back">
+    <text class="warfarin" id="drugtext" style="margin-top: 75px;">WARFARIN</text>
+    <text class="labelback" id="condition1text" style="margin-top: 165px;"></text>
+    <text class="labelback" id="condition2text" style="margin-top: 195px;"></text>
+    <text class="labelback" id="rangetext" style="margin-top: 265px;"></text>
+    <text class="labelback" id="starttext" style="margin-top: 360px;"></text>
+    <text class="duration" id="durationtext" style="margin-top: 360px;"></text>
+  </div>
+  <div id="form">
+    <select class="backselect" name="drug" id="drug" tabindex="12">
+      <option value="WARFARIN">WARFARIN</option>
+      <option value="PHENINDIONE">PHENINDIONE</option>
+    </select>
+    <select class="backselect" name="condition1" id="condition1" tabindex="13">
+      <option value="">Please select</option>
+      <option value="ATRIAL FIBRILLATION">Atrial fibrillation</option>
+      <option value="MECHANICAL AORTIC VALVE">Mechanical aortic valve</option>
+    </select>
+    <select class="backselect" name="condition2" id="condition2" tabindex="14">
+      <option value="">Please select</option>
+      <option value="ATRIAL FIBRILLATION">Atrial fibrillation</option>
+      <option value="MECHANICAL AORTIC VALVE">Mechanical aortic valve</option>
+    </select>
+    <select class="backselect" name="range" id="range" tabindex="15">
+      <option value="">Please select</option>
+      <option value="2 - 3">2 - 3</option>
+      <option value="2.5 - 3.5">2.5 - 3.5</option>
+    </select>
+    <input type="date" id="startdate" tabindex="16">
+    <select class="backselect" name="inputduration" id="inputduration" tabindex="17">
+      <option value="">Please select</option>
+      <option value="Lifelong">Lifelong</option>
+      <option value="Indeterminate">Indeterminate</option>
+    </select>
+    <br><br>
+  </div>
 </div>
 </body>
-<script>
-$("#photo_button").click(function(){
-  var input = document.getElementById("file");
-  var fReader = new FileReader();
-  fReader.readAsDataURL(input.files[0]);
-  fReader.onloadend = function(event){
-  var img = document.getElementById("photo");
-  img.src = event.target.result;
-  }
-});
-$("#photo_remove_button").click(function(){
-document.getElementById('photo').src = "";
-});
-$("#num").keyup(function(){
-  JsBarcode("#barcode", document.getElementById('num').value, {height: 70});
-});
-$("#namei").keyup(function(){
-document.getElementById('name').innerHTML = document.getElementById('namei').value;
-});
-$("#address1i").keyup(function(){
-document.getElementById('address1').innerHTML = document.getElementById('address1i').value;
-});
-$("#address2i").keyup(function(){
-document.getElementById('address2').innerHTML = document.getElementById('address2i').value;
-});
-$("#address3i").keyup(function(){
-document.getElementById('address3').innerHTML = document.getElementById('address3i').value;
-});
-$("#address4i").keyup(function(){
-document.getElementById('address4').innerHTML = document.getElementById('address4i').value;
-});
-$("#address5i").keyup(function(){
-document.getElementById('address5').innerHTML = document.getElementById('address5i').value;
-});
-$("#noki").keyup(function(){
-document.getElementById('nok').innerHTML = document.getElementById('noki').value;
-});
-$("#teli").keyup(function(){
-document.getElementById('tel').innerHTML = document.getElementById('teli').value;
-});
-
-$("#clear").click(function(){
-JsBarcode("#barcode","0", {height: 70});
-document.getElementById('photo').src="";
-document.getElementById('barcode').innerHTML="";
-var x=document.getElementsByClassName("form-control");
-for(i=0; i<x.length; i++){
-  x[i].value = "";
-}
-var y = document.getElementsByClassName("label");
-for (i=0; i<y.length; i++){
-  y[i].innerHTML="";
-}
-});
-
-
-
-</script>
+<script src="script.js"></script>
 </html>

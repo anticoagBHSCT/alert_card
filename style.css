@@ -1,3 +1,7 @@
+#ul {
+  margin-left: 50px;
+}
+
 #front {
   position: relative;
   left: 50px;
@@ -8,12 +12,58 @@
   margin: 5px;
 }
 
+#back {
+  position: relative;
+  left: 50px;
+  width: 1050px;
+  height: 600px;
+  background-image: url(war_back.png);
+  background-position: center;
+  margin: 5px;
+}
+
+
 .label {
   position: absolute;
   color: rgb(28, 17, 7);
   font-family: sans-serif;
   font-size: 2em;
   margin-left: 70px;
+}
+
+.warfarin {
+  position: absolute;
+  color: rgb(28, 17, 7);
+  font-family: sans-serif;
+  font-size: 5em;
+  margin-left: 280px;
+}
+
+.labelback {
+  position: absolute;
+  color: rgb(28, 17, 7);
+  font-family: sans-serif;
+  font-size: 2.5em;
+  margin-left: 280px;
+}
+
+.duration {
+  position: absolute;
+  color: rgb(28, 17, 7);
+  font-family: sans-serif;
+  font-size: 2.5em;
+  margin-left: 800px;
+}
+
+
+
+
+#dob {
+  position: absolute;
+  font-size: 1.2em;
+  transform: rotate(-90deg);
+  margin-left: 880px;
+  margin-top: 350px;
 }
 
 #barcode {
