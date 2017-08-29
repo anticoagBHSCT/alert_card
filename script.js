@@ -2,7 +2,6 @@
 $(document).ready(function(){
   $('#second').hide();
 });
-
 $("#front_link").click(function(){
   $('#first').toggle();
   $('#second').hide();
@@ -34,12 +33,13 @@ $("#namei").keyup(function() {
   document.getElementById('name').innerHTML = document.getElementById('namei').value;
 });
 
-function formatDate(value) {
-  return value.getDate() + " - " + value.getMonth() + 1 + " - " + value.getFullYear();
-}
+// function formatDate(value) {
+//   return value.getDate() + " - " + value.getMonth() + 1 + " - " + value.getFullYear();
+// }
 $("#dobi").keyup(function() {
-  var d = new Date(document.getElementById('dobi').value);
-  document.getElementById('dob').innerHTML = "DOB: " + formatDate(d);
+  // var d = new Date(document.getElementById('dobi').value);
+  // document.getElementById('dob').innerHTML = "DOB: " + formatDate(d);
+    document.getElementById('dob').innerHTML = "DOB: "+document.getElementById('dobi').value;
 });
 $("#address1i").keyup(function() {
   document.getElementById('address1').innerHTML = document.getElementById('address1i').value;
@@ -70,9 +70,9 @@ $("#clear").click(function() {
   document.getElementById('photo').src = "";
   document.getElementById('barcode').innerHTML = "";
   document.getElementById('dob').innerHTML = "";
-  var x = document.getElementsByClassName("form-control");
-  for (i = 0; i < x.length; i++) {
-    x[i].value = "";
+  x = document.getElementsByTagName('input');
+  for (i=0;i <x.length; i++){
+    x[i].value="";
   }
   var y = document.getElementsByClassName("label");
   for (i = 0; i < y.length; i++) {
@@ -94,8 +94,9 @@ $("#range").change(function() {
   document.getElementById('rangetext').innerHTML = document.getElementById('range').value;
 });
 $("#startdate").keyup(function() {
-  var d = new Date(document.getElementById('startdate').value);
-  document.getElementById('starttext').innerHTML = formatDate(d);
+  // var d = new Date(document.getElementById('startdate').value);
+  // document.getElementById('starttext').innerHTML = formatDate(d);
+  document.getElementById('starttext').innerHTML = document.getElementById('startdate').value;
 });
 $("#inputduration").change(function() {
   document.getElementById('durationtext').innerHTML = document.getElementById('inputduration').value;
