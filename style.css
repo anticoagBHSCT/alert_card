@@ -5,8 +5,8 @@
 #front {
   position: relative;
   left: 50px;
-  width: 1050px;
-  height: 600px;
+  width: 1012px;
+  height: 638px;
   background-image: url(war_front.png);
   background-position: center;
   margin: 5px;
@@ -15,8 +15,8 @@
 #back {
   position: relative;
   left: 50px;
-  width: 1050px;
-  height: 600px;
+  width: 1012px;
+  height: 638px;
   background-image: url(war_back.PNG);
   background-position: center;
   margin: 5px;
@@ -28,7 +28,7 @@
   color: rgb(28, 17, 7);
   font-family: sans-serif;
   font-size: 2em;
-  margin-left: 70px;
+  margin-left: 120px;
 }
 
 .warfarin {
@@ -60,22 +60,22 @@
 
 #dob {
   position: absolute;
-  font-size: 1.2em;
+  font-size: 1.3em;
   transform: rotate(-90deg);
-  margin-left: 880px;
+  margin-left: 840px;
   margin-top: 350px;
 }
 
 #barcode {
   position: absolute;
-  margin-left: 720px;
-  margin-top: 470px;
+  margin-left: 660px;
+  margin-top: 505px;
 }
 
 #photo {
   position: absolute;
-  margin-left: 720px;
-  margin-top: 205px;
+  margin-left: 660px;
+  margin-top: 230px;
 }
 
 #form {
