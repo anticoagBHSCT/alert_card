@@ -11,6 +11,22 @@ $("#back_link").click(function(){
   $('#second').toggle();
 });
 
+//scripts for doac to vka
+$('#doac').click(function(){
+document.getElementById('front').style.backgroundImage = "url(doac_front.png)";
+document.getElementById('back').style.backgroundImage = "url(doac_back.png)";
+document.getElementById('drugtext').innerText = "APIXABAN";
+$('#range').hide();
+ });
+
+ $('#vka').click(function(){
+  document.getElementById('front').style.backgroundImage = "url(war_front.png)";
+  document.getElementById('back').style.backgroundImage = "url(war_back.png)";
+  document.getElementById('drugtext').innerText = "WARFARIN";
+  $('#range').show();
+   });
+
+
 //scripts for the front page
 $("#photo_button").click(function() {
   var input = document.getElementById("file");
