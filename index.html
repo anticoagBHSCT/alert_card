@@ -79,15 +79,23 @@
     <text class="labelback" id="condition1text" style="margin-top: 175px;"></text>
     <text class="labelback" id="condition2text" style="margin-top: 210px;"></text>
     <text class="labelback" id="rangetext" style="margin-top: 280px;"></text>
-    <text class="labelback" id="starttext" style="margin-top: 385px;"></text>
+    <text class="labelback" id="starttext" style="margin-top: 335px;"></text>
     <text class="duration" id="durationtext" style="margin-top: 385px;"></text>
   </div>
   <div id="form">
-    <select class="backselect" name="drug" id="drug" tabindex="12">
+    <select class="backselect" name="vkadrug" id="vkadrug" tabindex="12">
+      <option value=""></option>
       <option value="WARFARIN">WARFARIN</option>
       <option value="ACENOCOUMAROL">ACENOCOUMAROL</option>
       <option value="PHENINDIONE">PHENINDIONE</option>
     </select>
+<select class="backselect" name="doacdrug" id="doacdrug" tabindex="12">
+  <option value="APIXABAN">APIXABAN</option>
+  <option value="RIVAROXABAN">RIVAROXABAN</option>
+  <option value="EDOXABAN">EDOXABAN</option>
+  <option value="DABIGATRAN">DABIGATRAN</option>
+</select>
+
     <select class="backselect" name="condition1" id="condition1" tabindex="13">
       <option value="">Please select</option>
       <option value="1st episode Proximal DVT">1st episode Proximal DVT</option>
@@ -134,17 +142,16 @@
       <option value="1.5 to 2.0">1.5 to 2.0</option>
       <option value="1.5 to 2.5">1.5 to 2.5</option>
       <option value="2.0 to 2.5">2.0 to 2.5</option>
-      <option value="2.0 to 3.0 (Target INR 2.5)">2.0 to 3.0 (Target INR 2.5)</option>
-      <option value="2.0 to 3.0 for 3 months then 1.5 to 2.0">2.0 to 3.0 for 3/12 then 1.5 to 2.0</option>
+      <option value="2.0 to 3.0">2.0 to 3.0</option>
       <option value="2.5 to 3.0">2.5 to 3.0</option>
-      <option value="2.5 to 3.5 (Target INR 3.0)">2.5 to 3.5 (Target INR 3.0)</option>
+      <option value="2.5 to 3.5">2.5 to 3.5</option>
       <option value="3.0 to 4.0">3.0 to 4.0</option>
     </select>
     <input type="text" id="startdate" tabindex="16">
     <select class="backselect" name="inputduration" id="inputduration" tabindex="17">
       <option value="">Please select</option>
-      <option value="Longterm">Longterm</option>
-      <option value="Indeterminate">Indeterminate</option>
+      <option value="Long-term">Long-term</option>
+      <option value="For review">For review</option>
       <option value="3 months">3 months</option>
       <option value="6 months">6 months</option>
     </select>

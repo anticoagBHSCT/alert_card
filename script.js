@@ -1,6 +1,7 @@
 //pagination scripts
 $(document).ready(function(){
   $('#second').hide();
+  $('#doacdrug').hide();
 });
 $("#front_link").click(function(){
   $('#first').toggle();
@@ -17,6 +18,8 @@ document.getElementById('front').style.backgroundImage = "url(doac_front.png)";
 document.getElementById('back').style.backgroundImage = "url(doac_back.png)";
 document.getElementById('drugtext').innerText = "APIXABAN";
 $('#range').hide();
+$('#vkadrug').hide();
+$('#doacdrug').show();
  });
 
  $('#vka').click(function(){
@@ -24,6 +27,8 @@ $('#range').hide();
   document.getElementById('back').style.backgroundImage = "url(war_back.png)";
   document.getElementById('drugtext').innerText = "WARFARIN";
   $('#range').show();
+  $('#doacdrug').hide();
+  $('#vkadrug').show();
    });
 
 
@@ -97,8 +102,11 @@ $("#clear").click(function() {
 });
 
 //backscript
-$("#drug").change(function() {
-  document.getElementById('drugtext').innerHTML = document.getElementById('drug').value;
+$("#vkadrug").change(function() {
+  document.getElementById('drugtext').innerHTML = document.getElementById('vkadrug').value;
+});
+$("#doacdrug").change(function() {
+  document.getElementById('drugtext').innerHTML = document.getElementById('doacdrug').value;
 });
 $("#condition1").change(function() {
   document.getElementById('condition1text').innerHTML = document.getElementById('condition1').value;
