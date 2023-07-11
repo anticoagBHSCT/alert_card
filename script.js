@@ -17,6 +17,7 @@ $('#doac').click(function(){
 document.getElementById('front').style.backgroundImage = "url(doac_front.png)";
 document.getElementById('back').style.backgroundImage = "url(doac_back.png)";
 document.getElementById('drugtext').innerText = "APIXABAN";
+document.getElementById('starttext').style.marginTop="275px";
 $('#range').hide();
 $('#vkadrug').hide();
 $('#doacdrug').show();
