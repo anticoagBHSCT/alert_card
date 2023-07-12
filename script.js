@@ -10,17 +10,31 @@ $("#front_link").click(function(){
 $("#back_link").click(function(){
   $('#first').hide();
   $('#second').toggle();
+  $('#doaccondition1').hide();
+  $('#doaccondition2').hide();
 });
 
 //scripts for doac to vka
+var clear =function(){
+document.getElementById('rangetext').innerText="";
+document.getElementById('durationtext').innerText="";
+document.getElementById('condition1text').innerText="";
+document.getElementById('condition2text').innerText="";
+};
+
 $('#doac').click(function(){
 document.getElementById('front').style.backgroundImage = "url(doac_front.png)";
 document.getElementById('back').style.backgroundImage = "url(doac_back.png)";
 document.getElementById('drugtext').innerText = "APIXABAN";
 document.getElementById('starttext').style.marginTop="280px";
+$('#condition1').hide();
+$('#condition2').hide();
+$('#doaccondition1').show();
+$('#doaccondition2').show();
 $('#range').hide();
 $('#vkadrug').hide();
 $('#doacdrug').show();
+clear();
  });
 
  $('#vka').click(function(){
@@ -28,9 +42,14 @@ $('#doacdrug').show();
   document.getElementById('back').style.backgroundImage = "url(war_back.png)";
   document.getElementById('drugtext').innerText = "WARFARIN";
   document.getElementById('starttext').style.marginTop="335px";
+  $('#doaccondition1').hide();
+  $('#doaccondition2').hide();
+  $('#condition1').show();
+  $('#condition2').show();
   $('#range').show();
   $('#doacdrug').hide();
   $('#vkadrug').show();
+  clear();
    });
 
 
@@ -116,10 +135,17 @@ $("#condition1").change(function() {
 $("#condition2").change(function() {
   document.getElementById('condition2text').innerHTML = document.getElementById('condition2').value;
 });
+$("#doaccondition1").change(function() {
+  document.getElementById('condition1text').innerHTML = document.getElementById('doaccondition1').value;
+});
+$("#doaccondition2").change(function() {
+  document.getElementById('condition2text').innerHTML = document.getElementById('doaccondition2').value;
+});
+
 $("#range").change(function() {
   document.getElementById('rangetext').innerHTML = document.getElementById('range').value;
 });
-$("#startdate").keyup(function() {
+$("#startdate").change(function() {
   // var d = new Date(document.getElementById('startdate').value);
   // document.getElementById('starttext').innerHTML = formatDate(d);
   document.getElementById('starttext').innerHTML = document.getElementById('startdate').value;
