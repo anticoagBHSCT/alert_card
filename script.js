@@ -27,6 +27,7 @@ $('#doacdrug').show();
   document.getElementById('front').style.backgroundImage = "url(war_front.png)";
   document.getElementById('back').style.backgroundImage = "url(war_back.png)";
   document.getElementById('drugtext').innerText = "WARFARIN";
+  document.getElementById('starttext').style.marginTop="335px";
   $('#range').show();
   $('#doacdrug').hide();
   $('#vkadrug').show();
