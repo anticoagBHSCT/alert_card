@@ -17,12 +17,14 @@
 </head>
 
 <body>
-<ul class="pagination" id="ul">
-  <li><a href="#" class="active" id="front_link">Front</a></li>
-  <li><a href="#" id="back_link">Back</a></li>
-  <li><a href="#" id="vka">VKA</a></li>
-  <li><a href="#" id="doac">DOAC</a></li>
-</ul>
+  <ul class="pagination" id="ul">
+    <li><a href="#" class="active" id="front_link">Front</a></li>
+    <li><a href="#" id="back_link">Back</a></li>
+    <li><a href="#" id="vka">VKA</a></li>
+    <li><a href="#" id="doac">DOAC</a></li>
+    <li style="margin-left: 5px;"><button id="clear" class="btn btn-info">Clear  <span class="glyphicon glyphicon-trash"></span></button></li>
+    <li><button id="copy_front" onclick="clickButton()" class="btn btn-info">Copy card to clipboard <span class="glyphicon glyphicon-copy"></span></button></li>
+  </ul>
 <div id="first">
   <div class="col-md-12" id="front">
     <text class="label" id="name" style="margin-top: 250px;"></text>
