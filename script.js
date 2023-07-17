@@ -15,8 +15,10 @@ $("#back_link").click(function(){
 });
 
 $('#copy').click(function(){
-console.log("BOO");
+console.log("hi");
 });
+
+
 
 //scripts for doac to vka
 var clear =function(){
