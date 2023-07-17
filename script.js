@@ -14,6 +14,10 @@ $("#back_link").click(function(){
   $('#doaccondition2').hide();
 });
 
+$('#copy').click(function(){
+console.log("BOO");
+});
+
 //scripts for doac to vka
 var clear =function(){
 document.getElementById('rangetext').innerText="";
