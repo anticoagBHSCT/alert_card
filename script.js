@@ -15,11 +15,17 @@ $("#back_link").click(function(){
 });
 
 $('#copy').click(function(){
-console.log("hi");
+html2canvas(document.querySelector("#front")).then(canvas => {
+  canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
+});
 });
 
-
-
+$('#copy_back').click(function(){
+  html2canvas(document.querySelector("#back")).then(canvas => {
+    canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
+  });
+  });
+  
 //scripts for doac to vka
 var clear =function(){
 document.getElementById('rangetext').innerText="";
@@ -76,17 +82,19 @@ $("#num").keyup(function() {
   JsBarcode("#barcode", document.getElementById('num').value, {
     height: 100, width: 4.5, fontOptions: "bold", fontSize: 35, textMargin: -7, margin: 0
   });
+var svg = $("#barcode")[0];
+var xml = new XMLSerializer().serializeToString(svg);
+var base64 = 'data:image/svg+xml;base64,' + btoa(xml);
+var img = $("#image")[0];
+img.src = base64;
 });
+
+
 $("#namei").keyup(function() {
   document.getElementById('name').innerHTML = document.getElementById('namei').value;
 });
 
-// function formatDate(value) {
-//   return value.getDate() + " - " + value.getMonth() + 1 + " - " + value.getFullYear();
-// }
 $("#dobi").keyup(function() {
-  // var d = new Date(document.getElementById('dobi').value);
-  // document.getElementById('dob').innerHTML = "DOB: " + formatDate(d);
     document.getElementById('dob').innerHTML = "DOB: "+document.getElementById('dobi').value;
 });
 $("#address1i").keyup(function() {
@@ -117,7 +125,13 @@ $("#clear").click(function() {
   });
   document.getElementById('photo').src = "";
   document.getElementById('barcode').innerHTML = "";
+  document.getElementById('image').src = "";
   document.getElementById('dob').innerHTML = "";
+  document.getElementById('rangetext').innerText="";
+  document.getElementById('starttext').innerText="";
+  document.getElementById('durationtext').innerText="";
+  document.getElementById('condition1text').innerText="";
+  document.getElementById('condition2text').innerText="";
   x = document.getElementsByTagName('input');
   for (i=0;i <x.length; i++){
     x[i].value="";
