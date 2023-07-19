@@ -1,7 +1,3 @@
-#ul {
-  margin-left: 50px;
-}
-
 #front {
   position: relative;
   left: 50px;
@@ -22,6 +18,18 @@
   margin: 5px;
 }
 
+#top {
+  font-size: 1em;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#menu {
+  margin-left:70px;
+}
+.backselect {
+  width: 160px;
+}
 
 .label {
   position: absolute;
@@ -56,7 +64,9 @@
 }
 
 
-
+#startdate {
+  width: 160px;
+}
 
 #dob {
   position: absolute;

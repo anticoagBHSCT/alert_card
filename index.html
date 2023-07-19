@@ -18,7 +18,14 @@
 </head>
 
 <body>
-  
+  <div id="top"><p>Anticoagulant Alert Card Web App. 
+    <ol>
+      <li>Photographs should be resized or cropped prior to upload to width 200 pixels and height 270 pixels to fit the frame.</li>
+      <li>Avery C32026 are sized 85mm x 54mm and card images should be posistioned in top left corner.</li>
+    </ol>
+  </p>
+  </div>
+  <div id="menu">
   <ul class="pagination" id="ul">
     <li><a href="#" class="active" id="front_link">Front</a></li>
     <li><a href="#" id="back_link">Back</a></li>
@@ -27,8 +34,9 @@
     <li style="margin-left: 5px;"><button id="clear" class="btn btn-info">Clear  <span class="glyphicon glyphicon-trash"></span></button></li>
     <li><button id="copy" class="btn btn-info">Front to clipboard <span class="glyphicon glyphicon-copy"></span></button></li>
     <li><button id="copy_back" class="btn btn-info">Back to clipboard <span class="glyphicon glyphicon-copy"></span></button></li>
-    <li><button class="btn btn-info"><a href="Avery_C32026_WordTemplate.doc">Avery_C32026_WordTemplate <span class="glyphicon glyphicon-download"></span></a></button></li>
+    <li><button class="btn btn-info" onclick="window.location.href='Avery_C32026_WordTemplate.doc'">Avery_C32026_WordTemplate <span class="glyphicon glyphicon-download"></span></a></button></li>
   </ul>
+</div>
 <div id="first">
   <div class="col-md-12" id="front">
     <text class="label" id="name" style="margin-top: 250px;"></text>
@@ -52,9 +60,9 @@
       <button id="photo_button">Upload</button>
       <button id="photo_remove_button">Remove</button>
       <br><br>
-      <label for="num">H&amp;C  </label>
+      <label for="num">H&amp;C:</label>
       <input tabindex="2" type="text" maxlength="10" id="num"><br>
-      <label for="dobi">DOB  </label>
+      <label for="dobi">DOB:</label>
       <input tabindex="3" type="text" id="dobi"><br>
       <label for="namei">Name</label>
       <input tabindex="4" type="text" id="namei">
@@ -71,7 +79,7 @@
       <label for="name">Next of Kin</label>
       <input type="text" id="noki" tabindex="10"><br>
 
-      <label for="name">Telephone</label>
+      <label for="name">Telephone:</label>
       <input type="text" id="teli" tabindex="11">
 
     </div>
@@ -192,7 +200,7 @@
       <option value="2.5 to 3.5">2.5 to 3.5</option>
       <option value="3.0 to 4.0">3.0 to 4.0</option>
     </select>
-    <input type="text" id="startdate" tabindex="16">
+    <input type="text" id="startdate" tabindex="16" placeholder="Start date">
     <select class="backselect" name="inputduration" id="inputduration" tabindex="17">
       <option value="">Please select</option>
       <option value="Long-term">Long-term</option>
