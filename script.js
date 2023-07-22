@@ -26,6 +26,14 @@ $('#copy_back').click(function(){
   });
   });
   
+//to finish below
+$('#pdf').click(function(){
+  html2canvas(document.querySelector("#front")).then(canvas => {
+    
+  });
+
+});
+  
 //scripts for doac to vka
 var clear =function(){
 document.getElementById('rangetext').innerText="";

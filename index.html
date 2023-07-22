@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Anticoagulant alert card</title>
+  <title>Anticoagulant alert card Web App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
@@ -34,6 +34,7 @@
     <li style="margin-left: 5px;"><button id="clear" class="btn btn-info">Clear  <span class="glyphicon glyphicon-trash"></span></button></li>
     <li><button id="copy" class="btn btn-info">Front to clipboard <span class="glyphicon glyphicon-copy"></span></button></li>
     <li><button id="copy_back" class="btn btn-info">Back to clipboard <span class="glyphicon glyphicon-copy"></span></button></li>
+    <li><button id="pdf" class="btn btn-info">.pdf file <span class="glyphicon glyphicon-file"></span></button></li>
     <li><button class="btn btn-info" onclick="window.location.href='Avery_C32026_WordTemplate.doc'">Avery_C32026_WordTemplate <span class="glyphicon glyphicon-download"></span></a></button></li>
   </ul>
 </div>
@@ -48,6 +49,7 @@
     <text class="label" id="address5" style="margin-top: 400px;"></text>
     <text class="label" id="nok" style="margin-top: 480px;"></text>
     <text class="label" id="tel" style="margin-top: 545px;"></text>
+    <text id="hcn">Health and Care Number</text>
     <svg id="barcode"></svg>
     <img id="image"></img>
     <img id="photo" src="" alt="photo">
