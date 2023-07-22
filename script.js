@@ -80,7 +80,7 @@ $("#photo_remove_button").click(function() {
 });
 $("#num").keyup(function() {
   JsBarcode("#barcode", document.getElementById('num').value, {
-    height: 100, width: 4.5, fontOptions: "bold", fontSize: 35, textMargin: -7, margin: 0
+    height: 100, width: 4.5, fontOptions: "bold", fontSize: 35, textMargin: -7, margin: 0, textAlign: "right"
   });
 var svg = $("#barcode")[0];
 var xml = new XMLSerializer().serializeToString(svg);
