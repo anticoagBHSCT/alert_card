@@ -95,7 +95,7 @@ $("#namei").keyup(function() {
 });
 
 $("#dobi").keyup(function() {
-    document.getElementById('dob').innerHTML = "DOB: "+document.getElementById('dobi').value;
+    document.getElementById('dob').innerHTML = "Date of birth: "+document.getElementById('dobi').value;
 });
 $("#address1i").keyup(function() {
   document.getElementById('address1').innerHTML = document.getElementById('address1i').value;
