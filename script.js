@@ -28,9 +28,52 @@ $('#copy_back').click(function(){
   
 //to finish below
 $('#pdf').click(function(){
+
+ $('#first').show();
+ $('#second').hide();
+
   html2canvas(document.querySelector("#front")).then(canvas => {
-    
+    const fimage = canvas.toDataURL('image/png');
+    document.getElementById('frontpdfimage').src = fimage;
+    // Data URL of the PNG image (replace this with your actual data URL)
+    var pngDataUrl = canvas.toDataURL('image/png');
+
+    // Create a new jsPDF instance
+    var doc = new jsPDF();
+
+    // Add the PNG image to the PDF document
+    doc.addImage(pngDataUrl, "PNG", 10, 10, 100, 100); // (image, format, x, y, width, height)
+
+    // Save the PDF document
+    doc.save("output.pdf");
+
+
+
   });
+  $('#first').hide();
+  $('#second').show();
+ html2canvas(document.querySelector("#back")).then(canvas => {
+  document.body.appendChild(canvas); 
+ });
+ $('#first').show();
+ $('#second').hide();
+
+
+
+
+ //const { jsPDF } = window.jspdf;
+ 
+ //let doc = new jsPDF('l', 'mm', [1500, 1400]);
+ //let pdfjs = document.querySelector('#pdfdiv');
+
+ //doc.html(pdfjs, {
+   //  callback: function(doc) {
+     //    doc.save("newpdf.pdf");
+     //},
+     //x: 12,
+     //y: 12
+ //});         
+
 
 });
   
