@@ -32,48 +32,35 @@ $('#pdf').click(function(){
  $('#first').show();
  $('#second').hide();
 
+    // Create a new jsPDF instance
+    var doc = new jsPDF();
+
   html2canvas(document.querySelector("#front")).then(canvas => {
     const fimage = canvas.toDataURL('image/png');
     document.getElementById('frontpdfimage').src = fimage;
     // Data URL of the PNG image (replace this with your actual data URL)
-    var pngDataUrl = canvas.toDataURL('image/png');
-
-    // Create a new jsPDF instance
-    var doc = new jsPDF();
-
+    var fpngDataUrl = canvas.toDataURL('image/png');
     // Add the PNG image to the PDF document
-    doc.addImage(pngDataUrl, "PNG", 10, 10, 100, 100); // (image, format, x, y, width, height)
-
-    // Save the PDF document
-    doc.save("output.pdf");
-
-
+    doc.addImage(fpngDataUrl, "PNG", 5, 10, 201, 126, "front");; // (image, format, x, y, width, height)
 
   });
   $('#first').hide();
   $('#second').show();
  html2canvas(document.querySelector("#back")).then(canvas => {
-  document.body.appendChild(canvas); 
+  const bimage = canvas.toDataURL('image/png');
+  document.getElementById('backpdfimage').src = bimage;
+  // Data URL of the PNG image (replace this with your actual data URL)
+  var bpngDataUrl = canvas.toDataURL('image/png');
+
+  // Add the PNG image to the PDF document
+  doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back"); // (image, format, x, y, width, height)
+  doc.text("Digital Anticoagulant Alert Card", 10, 285);
+  doc.save("output.pdf");
+  document.getElementById('frontpdfimage').src = "";
+  document.getElementById('backpdfimage').src = "";
  });
  $('#first').show();
  $('#second').hide();
-
-
-
-
- //const { jsPDF } = window.jspdf;
- 
- //let doc = new jsPDF('l', 'mm', [1500, 1400]);
- //let pdfjs = document.querySelector('#pdfdiv');
-
- //doc.html(pdfjs, {
-   //  callback: function(doc) {
-     //    doc.save("newpdf.pdf");
-     //},
-     //x: 12,
-     //y: 12
- //});         
-
 
 });
   
@@ -88,7 +75,7 @@ document.getElementById('condition2text').innerText="";
 $('#doac').click(function(){
 document.getElementById('front').style.backgroundImage = "url(doac_front.png)";
 document.getElementById('back').style.backgroundImage = "url(doac_back.png)";
-document.getElementById('drugtext').innerText = "APIXABAN";
+document.getElementById('drugtext').innerText = "";
 document.getElementById('starttext').style.marginTop="280px";
 $('#condition1').hide();
 $('#condition2').hide();
