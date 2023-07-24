@@ -34,7 +34,7 @@ $('#pdf').click(function(){
 
     // Create a new jsPDF instance
     var doc = new jsPDF();
-
+    doc.text("Digital Anticoagulant Alert Card", 10, 285);
   html2canvas(document.querySelector("#front")).then(canvas => {
     const fimage = canvas.toDataURL('image/png');
     document.getElementById('frontpdfimage').src = fimage;
@@ -54,7 +54,7 @@ $('#pdf').click(function(){
 
   // Add the PNG image to the PDF document
   doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back"); // (image, format, x, y, width, height)
-  doc.text("Digital Anticoagulant Alert Card", 10, 285);
+
   doc.save("output.pdf");
   document.getElementById('frontpdfimage').src = "";
   document.getElementById('backpdfimage').src = "";
