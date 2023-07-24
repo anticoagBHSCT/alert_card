@@ -55,7 +55,7 @@ $('#pdf').click(function(){
   // Add the PNG image to the PDF document
   doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back"); // (image, format, x, y, width, height)
 
-  doc.save("output.pdf");
+  doc.save("digital_alert_card.pdf");
   document.getElementById('frontpdfimage').src = "";
   document.getElementById('backpdfimage').src = "";
  });
