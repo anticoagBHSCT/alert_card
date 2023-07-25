@@ -44,7 +44,7 @@ $('#pdf').click(function(){
     doc.text("Digital Anticoagulant Alert Card", 10, 285);
     var logo = new Image();
     logo.src = 'BHSCT_Logo.png';
-    doc.addImage(logo, 'png', 160, 280);
+    doc.addImage(logo, 'png', 160, 277);
     
    html2canvas(document.querySelector("#front")).then(canvas => {
     doc.addImage(canvas, "PNG", 5, 10, 201, 126, "front");  
