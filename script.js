@@ -28,30 +28,32 @@ $('#copy_back').click(function(){
   
 //to finish below
 $('#pdf').click(function(){
-
  $('#first').show();
- $('#second').show();
+ $('#second').hide();
     var doc = new jsPDF();
     doc.setProperties({
       title: 'Digital Anticoagulant Alert Card',
       subject: 'Please contact AntiCoagClinic@belfasttrust.hscni.net for queries concerning this document',
       author: 'Anticoagulant Service, Belfast Health and Social Care Trust',
-      keywords: 'alert, anticoagulant, safety, warfarin',
+      keywords: 'alert, anticoagulant, card, safety, warfarin',
       creator: 'Brian Proctor'
-    });
+    }); 
+    doc.setDrawColor(0, 0, 255);
+    doc.setTextColor(0, 0, 255);
     doc.rect(2, 2, 206, 290);
     doc.text("Digital Anticoagulant Alert Card", 10, 285);
-  html2canvas(document.querySelector("#front")).then(canvas => {
-    const fpngDataUrl = canvas.toDataURL('image/png');
-    doc.addImage(fpngDataUrl, "PNG", 5, 10, 201, 126, "front");;
+ 
+   html2canvas(document.querySelector("#front")).then(canvas => {
+    doc.addImage(canvas, "PNG", 5, 10, 201, 126, "front");  
+    });
+  $('#first').hide();
+  $('#second').show();
+  html2canvas(document.querySelector("#back")).then(canvas => {
+    doc.addImage(canvas, "PNG", 5, 150, 201, 126, "back");  
+    doc.save("digital_alert_card.pdf");
   });
- html2canvas(document.querySelector("#back")).then(canvas => {
-  const bpngDataUrl = canvas.toDataURL('image/png');
-  doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back");
-  doc.save("digital_alert_card.pdf");
- });
- $('#first').show();
- $('#second').hide();
+$('#first').show();
+$('#second').hide();
 });
   
 //scripts for doac to vka
