@@ -30,38 +30,28 @@ $('#copy_back').click(function(){
 $('#pdf').click(function(){
 
  $('#first').show();
- $('#second').hide();
-
-    // Create a new jsPDF instance
+ $('#second').show();
     var doc = new jsPDF();
+    doc.setProperties({
+      title: 'Digital Anticoagulant Alert Card',
+      subject: 'Please contact AntiCoagClinic@belfasttrust.hscni.net for queries concerning this document',
+      author: 'Anticoagulant Service, Belfast Health and Social Care Trust',
+      keywords: 'alert, anticoagulant, safety, warfarin',
+      creator: 'Brian Proctor'
+    });
+    doc.rect(2, 2, 206, 290);
     doc.text("Digital Anticoagulant Alert Card", 10, 285);
   html2canvas(document.querySelector("#front")).then(canvas => {
-    const fimage = canvas.toDataURL('image/png');
-    document.getElementById('frontpdfimage').src = fimage;
-    // Data URL of the PNG image (replace this with your actual data URL)
-    var fpngDataUrl = canvas.toDataURL('image/png');
-    // Add the PNG image to the PDF document
-    doc.addImage(fpngDataUrl, "PNG", 5, 10, 201, 126, "front");; // (image, format, x, y, width, height)
-
+    const fpngDataUrl = canvas.toDataURL('image/png');
+    doc.addImage(fpngDataUrl, "PNG", 5, 10, 201, 126, "front");;
   });
-  $('#first').hide();
-  $('#second').show();
  html2canvas(document.querySelector("#back")).then(canvas => {
-  const bimage = canvas.toDataURL('image/png');
-  document.getElementById('backpdfimage').src = bimage;
-  // Data URL of the PNG image (replace this with your actual data URL)
-  var bpngDataUrl = canvas.toDataURL('image/png');
-
-  // Add the PNG image to the PDF document
-  doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back"); // (image, format, x, y, width, height)
-
+  const bpngDataUrl = canvas.toDataURL('image/png');
+  doc.addImage(bpngDataUrl, "PNG", 5, 150, 201, 126, "back");
   doc.save("digital_alert_card.pdf");
-  document.getElementById('frontpdfimage').src = "";
-  document.getElementById('backpdfimage').src = "";
  });
  $('#first').show();
  $('#second').hide();
-
 });
   
 //scripts for doac to vka
