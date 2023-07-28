@@ -53,7 +53,7 @@ $('#pdf').click(function(){
   $('#second').show();
   html2canvas(document.querySelector("#back")).then(canvas => {
     doc.addImage(canvas, "PNG", 5, 150, 201, 126, "back");  
-    doc.save("digital_alert_card.pdf");
+    doc.save("Digital Alert Card.pdf");
   });
 $('#first').show();
 $('#second').hide();
