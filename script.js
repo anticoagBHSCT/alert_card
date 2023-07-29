@@ -14,6 +14,21 @@ $("#back_link").click(function(){
   $('#doaccondition2').hide();
 });
 
+// function random_image()
+// {
+//   var x = Math.round(Math.random());
+//   if(x==1){
+//     console.log("1");
+//     var img = document.getElementById("photo");
+//     img.src = "url(male.png)"
+//   } else {
+//     console.log("0");
+//     var img = document.getElementById("photo");
+//     img.src = "url(female.png)"
+//   }
+// }
+
+
 $('#copy').click(function(){
 html2canvas(document.querySelector("#front")).then(canvas => {
   canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
