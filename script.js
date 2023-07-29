@@ -14,20 +14,17 @@ $("#back_link").click(function(){
   $('#doaccondition2').hide();
 });
 
-// function random_image()
-// {
-//   var x = Math.round(Math.random());
-//   if(x==1){
-//     console.log("1");
-//     var img = document.getElementById("photo");
-//     img.src = "url(male.png)"
-//   } else {
-//     console.log("0");
-//     var img = document.getElementById("photo");
-//     img.src = "url(female.png)"
-//   }
-// }
-
+var random_image = function() 
+{
+  var x = Math.round(Math.random());
+  if(x==1){
+    var img = document.getElementById("photo");
+    img.src = "male.jpg"
+  } else {
+    var img = document.getElementById("photo");
+    img.src = "female.jpg"
+  }
+};
 
 $('#copy').click(function(){
 html2canvas(document.querySelector("#front")).then(canvas => {
@@ -124,7 +121,7 @@ $("#photo_button").click(function() {
   }
 });
 $("#photo_remove_button").click(function() {
-  document.getElementById('photo').src = "";
+random_image();
 });
 $("#num").keyup(function() {
   JsBarcode("#barcode", document.getElementById('num').value, {
@@ -171,7 +168,7 @@ $("#clear").click(function() {
   JsBarcode("#barcode", "0", {
     height: 70
   });
-  document.getElementById('photo').src = "";
+  random_image();
   document.getElementById('barcode').innerHTML = "";
   document.getElementById('image').src = "";
   document.getElementById('dob').innerHTML = "";
