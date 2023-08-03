@@ -2,16 +2,17 @@
 $(document).ready(function(){
   $('#second').hide();
   $('#doacdrug').hide();
+  $('#doaccondition1').hide();
+  $('#doaccondition2').hide();
 });
 $("#front_link").click(function(){
   $('#first').toggle();
   $('#second').hide();
 });
+
 $("#back_link").click(function(){
   $('#first').hide();
   $('#second').toggle();
-  $('#doaccondition1').hide();
-  $('#doaccondition2').hide();
 });
 
 var random_image = function() 
