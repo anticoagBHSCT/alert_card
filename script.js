@@ -54,9 +54,9 @@ $('#pdf').click(function(){
     doc.setDrawColor(0, 0, 255);
     doc.setTextColor(0, 0, 255);
     doc.rect(2, 2, 206, 290);
-    doc.text("Anticoagulant Alert Card", 6, 285); 
-    doc.textWithLink('(00)+442896152221 |', 70, 285, {url: 'tel:00442896152221'});
-    doc.textWithLink('AntiCoagClinic@', 121, 285, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
+    doc.text("Anticoagulant Alert Card", 5, 285); 
+    doc.textWithLink('(00)+442896152221 |', 68, 285, {url: 'tel:00442896152221'});
+    doc.textWithLink('AntiCoagClinic@', 122, 285, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
 
     var logo = new Image();
     logo.src = 'BHSCT_Logo.png';
