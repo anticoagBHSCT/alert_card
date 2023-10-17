@@ -54,10 +54,13 @@ $('#pdf').click(function(){
     doc.setDrawColor(0, 0, 255);
     doc.setTextColor(0, 0, 255);
     doc.rect(2, 2, 206, 290);
-    doc.text("Digital Anticoagulant Alert Card", 10, 285);
+    doc.text("Anticoagulant Alert Card", 6, 285); 
+    doc.textWithLink('00442896152221 |', 72, 285, {url: 'tel:00442896152221'});
+    doc.textWithLink('AntiCoagClinic@', 121, 285, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
+
     var logo = new Image();
     logo.src = 'BHSCT_Logo.png';
-    doc.addImage(logo, 'png', 160, 277);
+    doc.addImage(logo, 'png', 166, 277);
     
    html2canvas(document.querySelector("#front")).then(canvas => {
     doc.addImage(canvas, "PNG", 5, 10, 201, 126, "front");  
