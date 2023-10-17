@@ -55,7 +55,7 @@ $('#pdf').click(function(){
     doc.setTextColor(0, 0, 255);
     doc.rect(2, 2, 206, 290);
     doc.text("Anticoagulant Alert Card", 6, 285); 
-    doc.textWithLink('00442896152221 |', 72, 285, {url: 'tel:00442896152221'});
+    doc.textWithLink('00442896152221 |', 70, 285, {url: 'tel:(00)+442896152221'});
     doc.textWithLink('AntiCoagClinic@', 121, 285, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
 
     var logo = new Image();
