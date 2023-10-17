@@ -52,15 +52,20 @@ $('#pdf').click(function(){
       creator: 'Brian Proctor'
     }); 
     doc.setDrawColor(0, 0, 255);
-    doc.setTextColor(0, 0, 255);
+    doc.setTextColor(0);
+    doc.setFontSize(12);
     doc.rect(2, 2, 206, 290);
-    doc.text("Anticoagulant Alert Card", 5, 285); 
-    doc.textWithLink('(00)+442896152221 |', 68, 285, {url: 'tel:00442896152221'});
-    doc.textWithLink('AntiCoagClinic@', 122, 285, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
-
+    doc.text("Digital Anticoagulant Alert Card", 5, 275); 
+    doc.text("The Anticoagulant Service can be contacted on", 5, 285);
+    doc.setTextColor(0, 0, 255); 
+    doc.textWithLink('(00)+442896152221', 95, 285, {url: 'tel:00442896152221'});
+    doc.setTextColor(0);
+    doc.text("or email the service using this email address", 5, 290); 
+    doc.setTextColor(0, 0, 255);
+    doc.textWithLink('AntiCoagClinic@belfasttrust.hscni.net', 95, 290, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
     var logo = new Image();
     logo.src = 'BHSCT_Logo.png';
-    doc.addImage(logo, 'png', 166, 277);
+    doc.addImage(logo, 'png', 168, 278);
     
    html2canvas(document.querySelector("#front")).then(canvas => {
     doc.addImage(canvas, "PNG", 5, 10, 201, 126, "front");  
@@ -68,7 +73,7 @@ $('#pdf').click(function(){
   $('#first').hide();
   $('#second').show();
   html2canvas(document.querySelector("#back")).then(canvas => {
-    doc.addImage(canvas, "PNG", 5, 150, 201, 126, "back");  
+    doc.addImage(canvas, "PNG", 5, 145, 201, 126, "back");  
     doc.save("Digital Alert Card.pdf");
   });
 $('#first').show();
