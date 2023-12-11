@@ -39,7 +39,6 @@ $('#copy_back').click(function(){
   });
   });
   
-//to finish below
 $('#pdf').click(function(){
  $('#first').show();
  $('#second').hide();
@@ -55,6 +54,9 @@ $('#pdf').click(function(){
     doc.setTextColor(0);
     doc.setFontSize(12);
     doc.rect(2, 2, 206, 290);
+    doc.link(105, 195, 95, 30, {url: 'https://anticoagbhsct.github.io/alert_card/warfarin_info_book.pdf'});
+    doc.link(95, 230, 50, 35, {url: 'tel:00442896152221'});
+    doc.link(145, 230, 50, 40, {url: 'mailto:AntiCoagClinic@belfasttrust.hscni.net'});
     doc.text("Digital Anticoagulant Alert Card", 5, 275); 
     doc.text("The Anticoagulant Service can be contacted on", 5, 285);
     doc.setTextColor(0, 0, 255); 
